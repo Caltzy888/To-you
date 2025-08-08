@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Khusus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pembuka -->
+  <div id="intro">
+    <h1>Undangan Spesial Buat Kamu CBL <em><q>Cuma Bisa Lesley</q></em> 🎉</h1>
+    <button onclick="bukaUndangan()">Monyet Rebahan Mulu</button>
+  </div>
+
+  <!-- Musik -->
+  <audio id="djmusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+  <!-- Isi Undangan -->
+  <header>
+    <h1>Undangan Spesial</h1>
+    <p>Acara Pernikahan & Ulang Tahun</p>
+  </header>
+
+  <section id="pernikahan">
+    <h2>Undangan Pernikahan</h2>
+    <div class="divider"></div>
+    <p>
+      Dengan penuh rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i
+      untuk hadir dalam acara pernikahan kami:
+    </p>
+    <p><strong>To & Yann</strong></p>
+    <p>
+      🗓️ Sabtu, 21 September 2025 <br>
+      🕐 Pukul 10.00 WIB - Selesai <br>
+      📍 tambangan
+    </p>
+    <p>
+      Kehadiran dan doa restu Anda adalah hadiah terindah bagi kami.  
+      Terima kasih atas perhatiannya.
+    </p>
+  </section>
+
+  <section id="ultah">
+    <h2>Undangan Pesta!!!</h2>
+    <div class="divider"></div>
+    <p><strong>Farel</strong></p>
+    <p>
+      Halo teman-teman! 🎉<br>
+      Ayo datang dan rayakan ulang tahunku yang ke-29 bersama!
+    </p>
+    <p>
+      🗓️ Minggu, 28 September 2025 <br>
+      🕐 Pukul 15.00 WIB <br>
+      📍 Cafe Ceria, Jl. Bahagia No. 7, Jakarta
+    </p>
+    <p>
+      Akan ada makanan enak 🍕, games seru 🎯, dan tentunya keseruan tiada henti!  
+      Jangan lupa bawa kado kalo gak yaudah, ya! 😁
+    </p>
+    <p><a href="https://maps.app.goo.gl/1j7jVzpDSJ6pBnLT7/"> Google Map To My House</a>.</p> //Buat masukin link
+  </section>
+
+  <div class="footer">
+    © TRX2025 Undangan Khusus Kamu.
+  </div>
+
+  <script>
+    function bukaUndangan() {
+      document.getElementById('intro').style.display = 'none';
+      document.querySelector('header').style.display = 'block';
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'block');
+      document.querySelector('.footer').style.display = 'block';
+
+      const audio = document.getElementById('djmusic');
+      audio.play();
+    }
+
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect().top;
+        if (rect < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    });
+
+    // Trigger on load
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+</html>
